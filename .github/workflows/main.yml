@@ -16,5 +16,5 @@ jobs:
         uses: docker/build-push-action@v4
         with:
           push: true
-          tags: crtapia3991/GO_AWS_DOCKER:latest
+          tags: crtapia3991/go_aws_docker:latest
           
