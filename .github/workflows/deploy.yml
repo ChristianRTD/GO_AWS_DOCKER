@@ -21,7 +21,7 @@ jobs:
         uses: docker/build-push-action@v4
         with:
           push: true
-          tags: crtapia3991/go_aws_docker-prod:latest
+          tags: crtapia3991/go_ec2-docker-prod:latest
 
       - name: Check out the code
         uses: actions/checkout@v3
@@ -41,10 +41,10 @@ jobs:
             username: ${{ secrets.EC2_USER }}
             key: ${{ secrets.EC2_SSH_KEY }}
             script: |
-                sudo docker stop go_aws_docker-prod  || echo "No existing process found"
-                sudo docker rm go_aws_docker-prod  || echo "No existing process found"
-                sudo docker pull crtapia3991/go_aws_docker-prod:latest
-                sudo docker run --network=host -d -p 80:80 --name go_aws_docker-prod crtapia3991/go_aws_docker-prod
+                sudo docker stop go_ec2-docker-prod  || echo "No existing process found"
+                sudo docker rm go_ec2-docker-prod  || echo "No existing process found"
+                sudo docker pull crtapia3991/go_ec2-docker-prod:latest
+                sudo docker run --network=host -d -p 80:80 --name go_ec2-docker-prod crtapia3991/go_ec2-docker-prod
 
       - name: Executing remote ssh commands ec2 2
         uses: appleboy/ssh-action@master
@@ -53,10 +53,10 @@ jobs:
             username: ${{ secrets.EC2_USER }}
             key: ${{ secrets.EC2_SSH_KEY }}
             script: |
-                sudo docker stop go_aws_docker-prod  || echo "No existing process found"
-                sudo docker rm go_aws_docker-prod  || echo "No existing process found"
-                sudo docker pull crtapia3991/go_aws_docker-prod:latest
-                sudo docker run --network=host -d -p 80:80 --name go_aws_docker-prod crtapia3991/go_aws_docker-prod
+                sudo docker stop go_ec2-docker-prod  || echo "No existing process found"
+                sudo docker rm go_ec2-docker-prod  || echo "No existing process found"
+                sudo docker pull crtapia3991/go_ec2-docker-prod:latest
+                sudo docker run --network=host -d -p 80:80 --name go_ec2-docker-prod crtapia3991/go_ec2-docker-prod
       - name: Executing remote ssh commands ec2 3
         uses: appleboy/ssh-action@master
         with:
@@ -64,10 +64,10 @@ jobs:
             username: ${{ secrets.EC2_USER }}
             key: ${{ secrets.EC2_SSH_KEY }}
             script: |
-                sudo docker stop go_aws_docker-prod  || echo "No existing process found"
-                sudo docker rm go_aws_docker-prod  || echo "No existing process found"
-                sudo docker pull crtapia3991/go_aws_docker-prod:latest
-                sudo docker run --network=host -d -p 80:80 --name go_aws_docker-prod crtapia3991/go_aws_docker-prod
+                sudo docker stop go_ec2-docker-prod  || echo "No existing process found"
+                sudo docker rm go_ec2-docker-prod  || echo "No existing process found"
+                sudo docker pull crtapia3991/go_ec2-docker-prod:latest
+                sudo docker run --network=host -d -p 80:80 --name go_ec2-docker-prod crtapia3991/go_ec2-docker-prod
       - name: Executing remote ssh commands ec2 4
         uses: appleboy/ssh-action@master
         with:
@@ -75,7 +75,7 @@ jobs:
             username: ${{ secrets.EC2_USER }}
             key: ${{ secrets.EC2_SSH_KEY }}
             script: |
-                sudo docker stop go_aws_docker-prod  || echo "No existing process found"
-                sudo docker rm go_aws_docker-prod  || echo "No existing process found"
-                sudo docker pull crtapia3991/go_aws_docker-prod:latest
-                sudo docker run --network=host -d -p 80:80 --name go_aws_docker-prod crtapia3991/go_aws_docker-prod
+                sudo docker stop go_ec2-docker-prod  || echo "No existing process found"
+                sudo docker rm go_ec2-docker-prod  || echo "No existing process found"
+                sudo docker pull crtapia3991/go_ec2-docker-prod:latest
+                sudo docker run --network=host -d -p 80:80 --name go_ec2-docker-prod crtapia3991/go_ec2-docker-prod
